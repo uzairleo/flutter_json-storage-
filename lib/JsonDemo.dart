@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'dart:convert';
 class JsonDemo extends StatefulWidget {
@@ -21,8 +23,9 @@ class _JsonDemoState extends State<JsonDemo> {
             .of(context)
             .loadString('load_json/person.json'),
             builder:(context,snapshot){
-              //decode from json(decode means deserialized or translating data structure into a string )
-              var myData=json.decode(snapshot.data.toString());
+              // decode from json(decode means deserialized or translating data structure into a string )
+              //this var is here checked and its a List in real
+              List<dynamic> myData=json.decode(snapshot.data.toString());
               return ListView.builder(
                 itemCount: (myData==null)?0:myData.length,
                 itemBuilder: (BuildContext context,index){
@@ -30,10 +33,10 @@ class _JsonDemoState extends State<JsonDemo> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text("name: "+myData[index]['name']),
-                          Text("Gender: "+myData[index]['gender']),
-                          Text("SkinColor: "+myData[index]['skin-color']),
-                          Text("Height: "+myData[index]['height']),
+                          Text("names  : "+myData[index]['name']),
+                          Text("Gender : "+myData[index]['gender']),
+                          Text("SkinColor : "+myData[index]['skin-color']),
+                          Text("Height : "+myData[index]['height']),
                           SizedBox(height:10.0)
                         ],
                       ),
