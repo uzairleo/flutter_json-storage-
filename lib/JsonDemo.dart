@@ -1,5 +1,5 @@
-import 'dart:collection';
-
+//so its an example of loading data from local json file 
+//so we named this as LOCAL JSON APP
 import 'package:flutter/material.dart';
 import 'dart:convert';
 class JsonDemo extends StatefulWidget {
@@ -33,10 +33,13 @@ class _JsonDemoState extends State<JsonDemo> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
+                          Text("Object# ${index+1} ",
+                          style: Theme.of(context).textTheme.title,),
                           Text("names  : "+myData[index]['name']),
                           Text("Gender : "+myData[index]['gender']),
                           Text("SkinColor : "+myData[index]['skin-color']),
                           Text("Height : "+myData[index]['height']),
+                          // TextField(),
                           SizedBox(height:10.0)
                         ],
                       ),
