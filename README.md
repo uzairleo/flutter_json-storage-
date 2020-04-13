@@ -1,5 +1,5 @@
 # flutter_json_storage
-
+So here i show how to save or serialized data into json and also how to deserialized data from json or decoded from json with some simple code snippest.
 A new Flutter project.
 
 ## Getting Started
